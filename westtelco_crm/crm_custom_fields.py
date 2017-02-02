@@ -5,7 +5,7 @@ class crm_custom_fields(osv.osv):
   _inherit = "crm.lead"
 
   _columns = {
-    'westtelco_crm_fecha_cita': fields.date('Fecha Cita de Ventas'),
+    'westtelco_crm_fecha_cita': fields.date('Fecha Cita de Ventas 1'),
     'westtelco_crm_no_promo': fields.boolean('No enviar promos'),
     'westtelco_crm_motivo': fields.char('Motivo de Contrato o Cancelación'),
     'westtelco_crm_tipo_empresa': fields.selection((('emprendedor','Emprendedor'),
