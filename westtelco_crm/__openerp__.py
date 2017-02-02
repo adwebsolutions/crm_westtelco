@@ -1,11 +1,11 @@
 {
-    'name': 'ADW CRM campos adicioanles',
+    'name': 'West Telco CRM campos adicioanles',
     'category': 'Tools',
-    'summary': 'Incluir campos adicionales de en crm',
+    'summary': 'Incluir campos adicionales de en crm de West Telco',
     'website': 'https://www.adweb.mx',
     'version': '1.0',
     'description': """
-Modulo de ADWEB CRM
+Modulo de CRM WEST TELCO
 ===================
 
         """,
