@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="adw_custom_fields_crm" model="ir.ui.view">
+        <field name="name">WESTELCO Campos Oportunidad</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+        <field name="arch" type="xml">
+            <field name="categ_ids" position="replace"/>    
+            <xpath expr="//group/group[3]" position="inside">
+                <field name="westelco_resellerusr" domain="[('westelco_reseller','=',True)]" options="{'limit': 10, 'create': false, 'create_edit': false}"/> 
+                <field name="westelco_marca" />
+            </xpath>
+            <xpath expr="//group/group[4]" position="inside">
+                    <field name="westelco_fecha_demo" />
+                    <field name="westelco_medio" />
+                                                 
+            </xpath>
+			<field name="user_id" position="attributes">
+                <attribute name="string">Asesor</attribute>		
+            </field>
+			<group string="Misc" position="replace" />
+			<group string="References" position="replace" />
+        </field>
+    </record>	
+  </data>
+</openerp>
