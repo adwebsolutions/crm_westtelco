@@ -9,12 +9,16 @@
             <field name="categ_ids" position="replace"/>    
             <xpath expr="//group/group[3]" position="inside">
                 <field name="westelco_resellerusr" domain="[('westelco_reseller','=',True)]" options="{'limit': 10, 'create': false, 'create_edit': false}"/> 
-                <field name="westelco_marca" />
+                <field name="westelco_marcas" />
+                <field name="westelco_auth_finanzas" />
+                <field name="westelco_observaciones" attrs="{'invisible':[('westelco_auth_finanzas', '=', False)]}" />
             </xpath>
             <xpath expr="//group/group[4]" position="inside">
-                    <field name="westelco_fecha_demo" />
-                    <field name="westelco_medio" />
-                                                 
+                <field name="westelco_fecha_demo" />
+                <field name="westelco_medio" />   
+                <field name="westelco_confirm_pago" />                                                 
+                <field name="westelco_fecha_pago" attrs="{'invisible':[('westelco_confirm_pago', '=', False)]}" />                                                 
+                <field name="westelco_medio_pago" attrs="{'invisible':[('westelco_confirm_pago', '=', False)]}" />                                                 
             </xpath>
 			<field name="user_id" position="attributes">
                 <attribute name="string">Asesor</attribute>		
