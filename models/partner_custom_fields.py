@@ -1,9 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
-
 from openerp import api, fields, models
 # Aqui se importan los paquetes que necesites, en orden alfabético
-
-
 #
 # El nombre de la clase en notación CamelCase.
 # La clases que se usan para extender los modelos, son modelos en sí mismos, por tanto heredan de models.Model
@@ -21,7 +18,7 @@ class PartnerCustomFields(models.Model):
   # En otras clases que pongo de ejemplo aquí si verán el _name
 
   # En la API vieja, los campos a la clase se espeficaban en un diccionario _columns
-  # otra diferencia era que los tipos de datos tenían la fora fields.char, en minúsculas. En la nueva API esto cambia a fields.Char, en mayúsculas
+  # otra diferencia era que los tipos de datos tenían la forma fields.char, en minúsculas. En la nueva API esto cambia a fields.Char, en mayúsculas
   # A continuación, un ejemplo:
 
   #_columns = {
@@ -58,7 +55,6 @@ class PartnerCustomFields(models.Model):
   westelco_reseller          = fields.Boolean(string="¿Es RESELLER?", help="¿Es un reseller?")
   westelco_certificaciones   = fields.Boolean(string="¿Tiene certificaciones?", help="¿Tiene certificaciones?")
   westelco_equipo_demo       = fields.Boolean(string="¿Tiene equipo para DEMO?", help="¿Tiene equipo para DEMO?")
-
 
 
 #
