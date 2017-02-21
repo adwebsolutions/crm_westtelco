@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
   <data>
-	  <record id="adw_view_partners_form_crm" model="ir.ui.view">
-	      <field name="name">view.res.partner.form.crm.inherited1</field>
-	      <field name="model">res.partner</field>
-	      <field name="inherit_id" ref="base.view_partner_form"/>
-	      <field name="arch" type="xml">
+      <record id="adw_view_partners_form_crm" model="ir.ui.view">
+          <field name="name">view.res.partner.form.crm.inherited1</field>
+          <field name="model">res.partner</field>
+          <field name="inherit_id" ref="base.view_partner_form"/>
+          <field name="arch" type="xml">
             <field name="category_id" position="after">
+                <div>
+                    <field name="westelco_certificaciones" placeholder="¿Tiene Certificaciones?" />
+                    <label for="westelco_certificaciones" string="¿Tiene Certificaciones?"/>
+                </div>
+                <div>
+                    <field name="westelco_equipo_demo" placeholder="¿Tiene Equipo Para DEMO?" />
+                    <label for="westelco_equipo_demo" string="¿Tiene Equipo Para DEMO?"/> 
+                </div>
                 <div>
                     <field name="westelco_reseller" placeholder="¿Es un reseller?" />
                     <label for="westelco_reseller" string="¿Es un reseller?"/>
@@ -16,15 +24,13 @@
                     <label for="westelco_tiene_credito" string="¿Tiene crédito?"/>
                 </div>
                 <field name="westelco_dias_de_credito" placeholder="Días de crédito"   attrs="{'invisible':[('westelco_tiene_credito', '=', False)]}" />
-
                 <hr attrs="{'invisible':[('is_company', '=', False)]}" />
-                <h2 attrs="{'invisible':[('is_company', '=', False)]}" > Otros datos de la Compañia </h2>   
-                <field name="westelco_rfc" placeholder="Código RFC"   attrs="{'invisible':[('is_company', '=', False)]}" />             
+                <h2 attrs="{'invisible':[('is_company', '=', False)]}" > Otros datos de la Compañia </h2>
+                <field name="westelco_rfc" placeholder="Código RFC"   attrs="{'invisible':[('is_company', '=', False)]}" />
                 <field name="westelco_razon_social" placeholder="Razón Social"   attrs="{'invisible':[('is_company', '=', False)]}"  />
                 <field name="westelco_domicilio_fiscal" placeholder="Domicilio Fiscal"   attrs="{'invisible':[('is_company', '=', False)]}"  />
-
-            </field>	      
-	      </field>
-	  </record>      
+            </field>
+          </field>
+      </record>
   </data>
 </openerp>

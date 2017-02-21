@@ -1,13 +1,13 @@
 ﻿# -*- coding: utf-8 -*-
 
 from datetime import datetime, date, time
-from openerp import api, fields, models 
+from openerp import api, fields, models
 
 class CrmCustomFields(models.Model):
 
   _inherit = "crm.lead"
 
-  westelco_fecha_demo     = fields.Date('Fecha de DEMO') 
+  westelco_fecha_demo     = fields.Date('Fecha de DEMO')
   westelco_medio          = fields.Selection(
                             (('adwords','Adwords'),
                             ('reseller','Reseller'),
@@ -22,10 +22,13 @@ class CrmCustomFields(models.Model):
   westelco_confirm_pago   = fields.Boolean('Confirmación de Pago')
   westelco_fecha_pago     = fields.Date('Fecha de Pago')
   westelco_medio_pago     = fields.Selection(
-                            (('efectivo','Efectivo'),
-                              ('transferencia','Transferencia Bancaraia'),
-                              ('deposito','Deposito Bancario'),
-                              ('paypal', 'Paypal')), 'Forma de pago')
+                                (('cheque','Cheque'),
+                                ('tranferencia_bancaria', 'Transferencia Bancaria'),
+                                ('efectivo', 'Efectivo')), 'Forma de Pago')
+westelco_hay_demo              = fields.Boolean(string="DEMO", help="DEMO")
+  westelco_fecha_proximo_cierre  = fields.Date('Fecha de Proximo Cierre')
+  westelco_requiere_apoyo_ti     = fields.Boolean(string="Se requiere apoyo de TI", help="Se requiere apoyo de TI")
+  westelco_asesor_de_ti          = fields.Many2one(comodel_name = 'res.partner', string='Asesor de TI')
 
 
 class WestelcoMarca(models.Model):

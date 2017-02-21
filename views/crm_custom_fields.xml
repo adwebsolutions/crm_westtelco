@@ -6,26 +6,30 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
         <field name="arch" type="xml">
-            <field name="categ_ids" position="replace"/>    
+            <field name="categ_ids" position="replace"/>
             <xpath expr="//group/group[3]" position="inside">
-                <field name="westelco_resellerusr" domain="[('westelco_reseller','=',True)]" options="{'limit': 10, 'create': false, 'create_edit': false}"/> 
-                <field name="westelco_marcas" />
-                <field name="westelco_auth_finanzas" />
-                <field name="westelco_observaciones" attrs="{'invisible':[('westelco_auth_finanzas', '=', False)]}" />
+                <field name="westelco_fecha_proximo_cierre" placeholder="Fecha de Proximo Cierre"/>
+                <field name="westelco_resellerusr" domain="[('westelco_reseller','=',True)]" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+                <field name="westelco_marcas" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+                <field name="westelco_autorizado_finanzas" placeholder="Autorizado de Finanzas" />
+                <field name="westelco_comentarios_finanzas" placeholder="Comentarios de Finanzas" />
             </xpath>
             <xpath expr="//group/group[4]" position="inside">
-                <field name="westelco_fecha_demo" />
-                <field name="westelco_medio" />   
-                <field name="westelco_confirm_pago" />                                                 
-                <field name="westelco_fecha_pago" attrs="{'invisible':[('westelco_confirm_pago', '=', False)]}" />                                                 
-                <field name="westelco_medio_pago" attrs="{'invisible':[('westelco_confirm_pago', '=', False)]}" />                                                 
+                <field name="westelco_medio" />
+                <field name="westelco_hay_demo" />
+                <field name="westelco_fecha_demo" attrs="{'invisible':[('westelco_hay_demo', '=', False)]}"/>
+                <field name="westelco_requiere_apoyo_ti" attrs="{'invisible':[('westelco_hay_demo', '=', False)]}"/>
+                <field name="westelco_asesor_de_ti" options="{'limit': 10, 'create': false, 'create_edit': false}" attrs="{'invisible':[('westelco_requiere_apoyo_ti', '=', False)]}"/>
+                <field name="westelco_confirmacion_de_pago" />
+                <field name="westelco_fecha_de_pago" placeholder="Fecha de Pago"   attrs="{'invisible':[('westelco_confirmacion_de_pago', '=', False)]}" />
+                <field name="westelco_forma_de_pago" placeholder="Forma de Pago"   attrs="{'invisible':[('westelco_confirmacion_de_pago', '=', False)]}" />
             </xpath>
-			<field name="user_id" position="attributes">
-                <attribute name="string">Asesor</attribute>		
+            <field name="user_id" position="attributes">
+                <attribute name="string">Asesor</attribute>
             </field>
-			<group string="Misc" position="replace" />
-			<group string="References" position="replace" />
+            <group string="Misc" position="replace" />
+            <group string="References" position="replace" />
         </field>
-    </record>	
+    </record>
   </data>
 </openerp>
