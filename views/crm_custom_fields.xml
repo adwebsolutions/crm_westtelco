@@ -14,7 +14,9 @@
                 <field name="westelco_comentarios_finanzas" placeholder="Comentarios de Finanzas" />
             </xpath>
             <xpath expr="//group/group[4]" position="inside">
-                <field name="westelco_medio" />
+                <field name="campaign_id" string="Campaña"/>
+                <field name="medium_id" string="Medio"/>
+                <field name="source_id" string="Origen"/>
                 <field name="westelco_hay_demo" />
                 <field name="westelco_fecha_demo" attrs="{'invisible':[('westelco_hay_demo', '=', False)]}"/>
                 <field name="westelco_requiere_apoyo_ti" attrs="{'invisible':[('westelco_hay_demo', '=', False)]}"/>
