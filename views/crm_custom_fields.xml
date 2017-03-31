@@ -8,7 +8,6 @@
         <field name="arch" type="xml">
             <field name="categ_ids" position="replace"/>
             <xpath expr="//group/group[3]" position="inside">
-                <field name="westelco_fecha_proximo_cierre" placeholder="Fecha de Proximo Cierre"/>
                 <field name="westelco_resellerusr" domain="[('westelco_reseller','=',True)]" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
                 <field name="westelco_marcas" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
                 <field name="westelco_autorizado_finanzas" placeholder="Autorizado de Finanzas" />
