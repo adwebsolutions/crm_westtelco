@@ -8,13 +8,6 @@ class CrmCustomFields(models.Model):
   _inherit = "crm.lead"
 
   westelco_fecha_demo            = fields.Date('Fecha de DEMO')
-  westelco_medio                 = fields.Selection(
-                                     (('adwords','Adwords'),
-                                     ('reseller','Reseller'),
-                                     ('cliente_recurrente','Cliente Recurrente'),
-                                     ('recomendacion','Recomendación'),
-                                     ('eventos','Eventos'),
-                                     ('bluemarketing','Campaña BlueMarketing')), 'Medio', required=True)
   westelco_resellerusr           = fields.Many2one(comodel_name = 'res.partner', string='Reseller')
   westelco_marcas                = fields.Many2one(comodel_name = 'westelco.marca', string ='Marcas')
   westelco_autorizado_finanzas   = fields.Boolean(string="Autorización de Finanzas", help="Autorización de Finanzas")
