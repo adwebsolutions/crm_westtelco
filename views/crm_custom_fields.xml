@@ -6,6 +6,16 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
         <field name="arch" type="xml">
+          <field name="partner_id" position="before">
+            <field name="id" />
+          </field>
+          <field name="id" position="attributes">
+              <attribute name="string"> ID de la Oportunidad </attribute>
+              <attribute name="attrs"> {'invisible':[('id', '=', False)]} </attribute>
+          </field>
+          <field name="partner_id" position="after">
+              <field name="westelco_mensaje_bienvenida" />
+          </field>
             <field name="categ_ids" position="replace"/>
             <xpath expr="//group/group[3]" position="inside">
                 <field name="westelco_resellerusr" domain="[('westelco_reseller','=',True)]" options="{'limit': 10, 'create': false, 'create_edit': false}"/>

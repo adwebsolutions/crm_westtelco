@@ -22,6 +22,7 @@ class CrmCustomFields(models.Model):
   westelco_fecha_proximo_cierre  = fields.Date('Fecha de Proximo Cierre')
   westelco_requiere_apoyo_ti     = fields.Boolean(string="Se requiere apoyo de TI", help="Se requiere apoyo de TI")
   westelco_asesor_de_ti          = fields.Many2one(comodel_name = 'res.partner', string='Asesor de TI')
+  westelco_mensaje_bienvenida    = fields.Boolean(string="No enviar mensaje de bienvenida", help="No enviar mensaje de bienvenida")
 
 
 class WestelcoMarcas(models.Model):
