@@ -3,8 +3,9 @@
         <template id="report_quotation_inherit_demo" inherit_id="sale.report_saleorder_document">
             <!-- Finds the first table with as class table table-condensed and gives the ability to modify it This will replace everything withing tr (including tr)-->
             <xpath expr="//table[@class='table table-condensed']//thead//tr" position="replace">
-                <tr style="background-color:#cfe3e3; color:#000000; font-weight: bold;">
+                <tr style="color:#000000; font-weight: bold;">
                     <th>Descripción</th>
+                    <th>Impuestos</th>
                     <th>Cantidad</th>
                     <th>Precio Unit</th>
                     <th>Desc. %</th>
