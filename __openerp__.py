@@ -14,7 +14,7 @@ Modulo de ADWEB para WESTELCO - CRM
     'author': 'ADWEB',
     'depends': ['crm','sale'],
     'external_dependencies': {},
-    'data': ['views/crm_custom_fields.xml','views/partner_custom_fields.xml','views/sales_custom_fields.xml'],
+    'data': ['views/crm_custom_fields.xml','views/partner_custom_fields.xml','views/sales_custom_fields.xml','views/templates.xml'],
     'installable': True,
     'auto_install':False,
     'active':False,
