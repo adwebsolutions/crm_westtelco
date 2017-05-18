@@ -1,10 +1,10 @@
 <openerp>
     <data>
         <template id="report_quotation_inherit_demo" inherit_id="sale.report_saleorder_document">
-            <xpath expr="//div[@class='header']//div//div//img" position="replace">
-              <img t-if="company.logo" t-att-src="http://www.westtelco.com.mx/crm/b1-networks.png" style="max-height: 45px;"/>
-            </xpath>
             <!-- Finds the first table with as class table table-condensed and gives the ability to modify it This will replace everything withing tr (including tr)-->
+            <xpath expr="/t[1]/div[1]/div[1]/div[1]/img[1]" position="replace">
+              <img src="http://www.westtelco.com.mx/crm/b1-networks.png" style="max-height: 45px;" data-oe-id="184" data-oe-model="ir.ui.view" data-oe-field="arch">
+            </xpath>
             <xpath expr="//table[@class='table table-condensed']//thead//tr" position="replace">
                 <tr style="color:#000000; font-weight: bold;">
                     <th>Descripción</th>
