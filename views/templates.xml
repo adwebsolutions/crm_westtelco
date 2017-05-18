@@ -1,26 +1,19 @@
 <openerp>
     <data>
         <template id="report_quotation_inherit_demo" inherit_id="sale.report_saleorder_document">
-            <!-- Finds the first table with as class table table-condensed and gives the ability to modify it This will replace everything withing tr (including tr)-->
-            <xpath expr="/t[1]/div[1]/div[1]/div[1]/img[1]" position="replace">
-              <img src="http://www.westtelco.com.mx/crm/b1-networks.png" style="max-height: 45px;" data-oe-id="184" data-oe-model="ir.ui.view" data-oe-field="arch">
-            </xpath>
-            <xpath expr="//table[@class='table table-condensed']//thead//tr" position="replace">
-                <tr style="color:#000000; font-weight: bold;">
-                    <th>Descripción</th>
-                    <th>Impuestos</th>
-                    <th>Cantidad</th>
-                    <th>Precio Unit</th>
-                    <th>Desc. %</th>
-                    <th class="text-right">Price</th>
-                </tr>
-            </xpath>
-            <!-- This will search for the 4'th td element (in the tbody with class sale_tbody) and will remove it. -->
-            <!-- Important: if you would start with element 2, then do 3 and then do 4 you will see strange behaviour.
-	    	        The first statement would remove element 2 making all other elements move in numbering too.
-            <xpath expr="//tbody[@class='sale_tbody']//tr//td[2]" position="replace"></xpath>
-            <xpath expr="//table[@class='table table-condensed']/following-sibling::div[1]//table[1]//tr[2]" position="replace"></xpath>
-            <xpath expr="//table[@class='table table-condensed']/following-sibling::div[1]//table[1]//tr[1]" position="replace"></xpath>-->
+          <!-- Finds the first table with as class table table-condensed and gives the ability to modify it This will replace everything withing tr (including tr)-->
+          <xpath expr="//table[@class='table table-condensed']//thead//tr" position="replace">
+            <t t-if="o.westelco_b1 == True">
+              <tr style="color:#000000; font-weight: bold;">
+                  <th>Descripción</th>
+                  <th>Impuestos</th>
+                  <th>Cantidad</th>
+                  <th>Precio Unit</th>
+                  <th>Desc. %</th>
+                  <th class="text-right">Price</th>
+              </tr>
+            </t>
+          </xpath>
         </template>
     </data>
 </openerp>
